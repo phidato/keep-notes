@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <div class="row d-flex justify-content-center container">
@@ -13,9 +15,10 @@
                 <perfect-scrollbar class="ps-show-limits">
                     <div style="position: static;" class="ps ps--active-y">
                         <div class="ps-content">
-                            <form method="post">
+                            <form method="post" style="margin: 20px;">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                {{ form.title|as_crispy_field }}
+                                {{ form.description|as_crispy_field }}
                                 <input type="submit" value="Save">
                             </form>
                         </div>

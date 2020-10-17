@@ -1,4 +1,30 @@
-<form method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input type="submit" value="Confirm">
-</form>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row d-flex justify-content-center container">
+    <div class="col-md-8">
+        <div class="card-hover-shadow-2x mb-3 card">
+            <div class="card-header-tab card-header">
+                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                    Note Delete
+                </div>
+            </div>
+            <div class="scroll-area-sm">
+                <perfect-scrollbar class="ps-show-limits">
+                    <div style="position: static;" class="ps ps--active-y">
+                        <div class="ps-content" style="margin: 20px;">
+                            <form method="post">{% csrf_token %}
+                                <p>Are you sure you want to delete "{{ object }}"?</p>
+                                <input type="submit" value="Confirm">
+                            </form>
+                        </div>
+                    </div>
+                </perfect-scrollbar>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
