@@ -17,7 +17,7 @@ from django.urls import path, include
 from notes.views import NoteCreate, NoteListView, NoteDetailView, NoteUpdate, NoteDelete
 
 urlpatterns = [
-    path('create', NoteCreate.as_view(), name='notecreate'),
+    path('create', NoteCreate.as_view(), name='note-create'),
     path('', NoteListView.as_view(), name='note-list'),
     path('<int:pk>/', NoteDetailView.as_view(), name='note-detail'),
     path('update/<int:pk>/', NoteUpdate.as_view(), name='note-update'),
